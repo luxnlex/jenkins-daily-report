@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Ежедневный отчет из Jenkins: {CurrentDate}</title>
+{ReplaceTableStyle}
+</head>
+<body oncopy="return false;">
+{ReplacePopupScript}
+<h3>Дата формирования отчета: {CurrentDate}</h3>
+<h4>Итого протестировано проектов: <b>{AllCount}</b>, из них успешных: <b>{SuccessCount}</b>, провалившихся: <b>{FailCount}</b></h4>
+{ReplaceScriptTemplate}
+<font color="red"><h5>* Обратить внимание! Проекты при запуске отчета сортируются по статусу! Для сортировки проектов по наименованию или другим колонкам воспользуйтесь возможностью ручной сортировки.</h5></font>
+{SortScript}
+<table border="1" width = "100%">
+<tr bgcolor = "DarkTurquoise" height="40">
+<th width="6%" class="thd" onclick="sort(this)" title="Нажмите на заголовок, чтобы отсортировать колонку"><img src="{sortPng}"></img><b>&nbsp;№</b></th>
+<th width="9%" id='clickonstartMain' class="thd" onclick="sort(this)" title="Нажмите на заголовок, чтобы отсортировать колонку"><img src="{sortPng}"></img><b>Статус</b></th>
+<th width="40%" class="thd" onclick="sort(this)" title="Нажмите на заголовок, чтобы отсортировать колонку"><img src="{sortPng}"></img><b>&nbsp;Имя проекта</b></th>
+<th width="15%"><b>Описание проекта</b></th>
+<th width="15%" class="thd" onclick="sort(this)" title="Нажмите на заголовок, чтобы отсортировать колонку"><img src="{sortPng}"></img><b>&nbsp;Последний успех</b></th>
+<th width="15%" class="thd" onclick="sort(this)" title="Нажмите на заголовок, чтобы отсортировать колонку"><img src="{sortPng}"></img><b>&nbsp;Провалилось с<br>последнего успеха</b></th>
+{HtmlPartsLoaded}
+</body>
+</html>
